@@ -25,6 +25,10 @@
           @click="setBackground('air')"
           :class="{'btn--active': currentBackground === 'air'}"
         >Air Balloon</button>
+        <button
+          @click="setBackground('yoga')"
+          :class="{'btn--active': currentBackground === 'yoga'}"
+        >Yoga</button>
       </div>
       <div>
         <span>Click image to play video</span>
@@ -48,10 +52,12 @@
 import Video3d from "./components/Video3d";
 import mountain from "@/assets/video.mp4";
 import mountainDepth from "@/assets/video-depth.jpg";
-import game from "@/assets/game.mp4";
-import gameDepth from "@/assets/game-depthSM.jpg";
+import game from "@/assets/gameBIG.mp4";
+import gameDepth from "@/assets/game-depth.jpg";
 import airballoon from "@/assets/airballoon.mp4";
 import airballoonDepth from "@/assets/airballoon-depth.jpg";
+import yoga from "@/assets/yoga.mp4";
+import yogaDepth from "@/assets/yoga-depth.jpg";
 export default {
   name: "App",
   components: {
@@ -150,6 +156,12 @@ export default {
       if (val === "air") {
         this.video = airballoon;
         this.depth = airballoonDepth;
+        this.mouseSensitivity = 100;
+        this.num++;
+      }
+      if (val === "yoga") {
+        this.video = yoga;
+        this.depth = yogaDepth;
         this.mouseSensitivity = 100;
         this.num++;
       }

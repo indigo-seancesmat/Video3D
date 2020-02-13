@@ -76,6 +76,9 @@ export default {
       height: window.innerHeight
     };
   },
+  beforeDestroy() {
+      console.log('destroy')
+  },
   mounted() {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
