@@ -77,7 +77,8 @@ export default {
     };
   },
   beforeDestroy() {
-      console.log('destroy')
+      this.nativeVideo.source.pause();
+     this.nativeVideo.source.currentTime = 0;
   },
   mounted() {
     this.width = window.innerWidth;
